@@ -156,6 +156,8 @@
 									</ul>
                                 </li>
                                 @endif
+                                <li class="navigation-header"><span>User</span> <i class="icon-menu" title="User"></i></li>
+								<li {{{ (Request::is('admina/showuser') ? 'class=active' : '') }}}><a href="/admina/showuser"><i class="icon-users"></i><span>User</span></a></li>
                                 <li class="navigation-header"><span>Barang Pinjam</span> <i class="icon-menu" title="Barang Pinjam"></i></li>
                                 <li>
                                     <a href="#"><i class="icon-basket"></i> <span>Barang</span></a>

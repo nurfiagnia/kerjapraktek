@@ -16,14 +16,14 @@
 
         <div class="panel-body">
             <div class="form-group">
-                <label class="col-lg-3 control-label">Nama Barang:</label>
+                <label class="col-lg-3 control-label">Nama:</label>
                 <div class="col-lg-9">
-                    <input type="text" name="name" class="form-control" placeholder="Nama Barang">
+                    <input type="text" name="name" class="form-control" placeholder="Nama">
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="col-lg-3 control-label">Tipe Barang:</label>
+                <label class="col-lg-3 control-label">Tipe:</label>
                 <div class="col-lg-9">
                     <select class="select-search" name="type">
                         <option value="barang" {{{ (Request::is('admina/newbarang') ? 'selected=selected' : '') }}}>Barang</option>

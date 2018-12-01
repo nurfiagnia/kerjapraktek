@@ -18,7 +18,7 @@
     </thead>
     <tbody>
         @foreach($val as $v)
-        @if($v->hasRole('admin'))
+        @if($v->hasRole('user'))
         <tr>
             <td>{{ $v->name }}</td>
             <td>{{ $v->email }}</td>
@@ -54,7 +54,7 @@
     </thead>
     <tbody>
         @foreach($val as $v)
-        @if($v->hasRole('suspend'))
+        @if($v->hasRole('suspend-user'))
         <tr>
             <td>{{ $v->name }}</td>
             <td>{{ $v->email }}</td>
@@ -64,7 +64,7 @@
             <td>{{ $v->jabatan }}</td>
             <td><span class="label label-danger">Suspended</span></td>
             <td class="text-center">
-                <form method="post" action="{{ route('admin/activate', $v->id) }}">
+                <form method="post" action="{{ route('admin/activateuser', $v->id) }}">
                     {{ csrf_field() }}
                     <center><input type="submit" class="btn btn-xs btn-success" data-toggle="tooltip" value="Activate Account"/></center>
                 </form>
@@ -86,7 +86,7 @@ function suspendAdmin(id){
             dangerMode: true
         }).then((value) => {
             if(value){
-                return fetch("/admina/adminsus/"+id,{
+                return fetch("/admina/usersus/"+id,{
                     method: "POST",
                     headers: {
                         "X-CSRF-Token": $('input[name="_token"]').val()

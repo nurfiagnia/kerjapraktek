@@ -177,7 +177,7 @@
         <hr>
         <div class="contact-item">
           <p>Senin-Jumat: 07:00 - 15:00</p>
-          <p>sabtu dan Minggu: Libur b</p>
+          <p>sabtu dan Minggu: Libur</p>
         </div>
       </div>
       <div class="col-md-4">

@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="panel panel-flat">
-<h4 class="container">Data Barang</h4>
+<h4 class="container">{{{ (Request::is('admina/showbarang') ? 'Data Barang' : '') }}}</h4>
+<h4 class="container">{{{ (Request::is('admina/showruangan') ? 'Data Ruangan' : '') }}}</h4>
 <table class="table datatable-basic">
     <thead>
         <tr>

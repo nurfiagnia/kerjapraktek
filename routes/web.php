@@ -25,6 +25,10 @@ Route::get('/barang', function(){
 
 Auth::routes();
 
+Route::prefix('admina')->group(function(){
+    Auth::routes();
+});
+
 Route::group(['middleware' => ['auth', 'role:superadmin' && 'role:admin']], function () {
     //Home Controller
     Route::get('/admina', 'Admin\AdminController@index')->name('admin');
@@ -41,6 +45,10 @@ Route::group(['middleware' => ['auth', 'role:superadmin' && 'role:admin']], func
     Route::post('/admina/updatebarang/{id}', 'Admin\BarangController@update')->name('barang/update');
     Route::delete('/admina/deletebarang/{id}', 'Admin\BarangController@delete')->name('barang/delete');
     Route::get('/admina/newruangan', 'Admin\BarangController@new')->name('admin/newruangan');
+    //User Controller
+    Route::get('/admina/showuser', 'Admin\UserController@show')->name('admin/showuser');
+    Route::post('/admina/usersus/{id}', 'Admin\UserController@suspend')->name('admin/usersus');
+    Route::post('/admina/useract/{id}', 'Admin\UserController@activate')->name('admin/activateuser');
     //Peminjaman Controller
     Route::get('/admina/peminjaman', 'Admin\PeminjamanController@show')->name('admin/showpeminjaman');
     Route::get('/admina/verifikasipeminjaman', 'Admin\PeminjamanController@show')->name('admin/verifpeminjaman');

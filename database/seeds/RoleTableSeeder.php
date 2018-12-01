@@ -34,6 +34,11 @@ class RoleTableSeeder extends Seeder
                 'name' => 'suspend',
                 'display_name' => 'Suspended Account',
                 'description' => 'Account was Suspended',
+            ],
+            [
+                'name' => 'suspend-user',
+                'display_name' => 'Suspended Account',
+                'description' => 'Account was Suspended',
             ]
         ];
         foreach ($roles as $key => $value) {
