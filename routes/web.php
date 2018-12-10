@@ -25,10 +25,6 @@ Route::get('/barang', function(){
 
 Auth::routes();
 
-Route::prefix('admina')->group(function(){
-    Auth::routes();
-});
-
 Route::group(['middleware' => ['auth', 'role:superadmin' && 'role:admin']], function () {
     //Home Controller
     Route::get('/admina', 'Admin\AdminController@index')->name('admin');
